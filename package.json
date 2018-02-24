@@ -1,0 +1,44 @@
+{
+  "name": "airsev",
+  "version": "1.0.0",
+  "description": "air sev",
+  "main": "src/main.js",
+  "scripts": {
+    "lint": "eslint src test --fix",
+    "test": "npm run lint && jest",
+    "cov": "npm run test -- --coverage",
+    "start": "node src/main.js",
+    "pro": "pm2-docker src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joehecn/airsev.git"
+  },
+  "keywords": [
+    "air"
+  ],
+  "author": "leanbrown@live.cn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joehecn/airsev/issues"
+  },
+  "homepage": "https://github.com/joehecn/airsev#readme",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5",
+    "xml2js": "^0.4.19"
+  },
+  "devDependencies": {
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "jest": "^22.4.2",
+    "supertest": "^3.0.0"
+  }
+}

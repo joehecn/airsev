@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+
+# Dependency directories
+node_modules
+coverage
+
+# 核心配置说明
+SETTINGS.md
