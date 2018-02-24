@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/joehecn/airsev#readme",
   "dependencies": {
+    "kcors": "^2.2.1",
     "koa": "^2.5.0",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.4.0",
