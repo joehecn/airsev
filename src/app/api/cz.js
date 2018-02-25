@@ -176,6 +176,7 @@ module.exports = async user => {
     console.log('------- error:')
     console.log(error)
     user.status = { message: '未知1' }
+    console.log(user)
     return user
   }
 }
