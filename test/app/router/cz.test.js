@@ -15,13 +15,13 @@ describe.skip('/test/app/router/cz.test.js', () => {
         //   done()
         // })
         .then(response => {
-          console.log(response.body.status)
+          console.log(response.body)
           // assert(response.body.name, '温思娜')
           expect(response.body.name).toBe('温思娜')
         })
     })
 
-    it('should 200', () => {
+    it.skip('should 200', () => {
       return supertest(server.listen())
         .post('/api/cz/flight')
         .send({ name: '温思娜', card: '441424199209086763' })

@@ -11,7 +11,7 @@ const getHost = pre => {
 }
 
 const b2cOrigin = `http://${getHost(preB2c)}`
-const extraOrigin = `https://${getHost(preExtra)}`
+const extraOrigin = `http://${getHost(preExtra)}`
 
 const getBaseHeaders = () => {
   return {
@@ -118,12 +118,15 @@ module.exports = async user => {
     // login
     const loginOptions = getLoginOptions()
     let res = await rpn(loginOptions)
+    // console.log(res)
+    user.success1 = res.success
     if (res.success) {
       // console.log(jar.getCookieString(extraOrigin))
       // cs1246643sso=b264cab7abc34894b8966e3dae596601; memberType=1; loginType=4; userId=413528706248; userType4logCookie=M; userId4logCookie=413528706248; useridCookie=%E6%B1%AA%E5%87%8C%E4%BA%91; userCodeCookie=%E6%B1%AA%E5%87%8C%E4%BA%91
       // checkB2CLogin
       const checkB2CLoginOptions = getExtraJsonOptions('/B2C40/seatnew/jaxb/b2clogin/checkB2CLogin.ao')
       res = await rpn(checkB2CLoginOptions)
+      user.message2 = res.message
       if (res.message === 'success') {
         // console.log(jar.getCookieString(extraOrigin))
         // cs1246643sso=b264cab7abc34894b8966e3dae596601; memberType=1; loginType=4; userId=413528706248; userType4logCookie=M; userId4logCookie=413528706248; useridCookie=%E6%B1%AA%E5%87%8C%E4%BA%91; userCodeCookie=%E6%B1%AA%E5%87%8C%E4%BA%91; JSESSIONID=E93082C47B273264A21A1A0ED5DB58FF
@@ -131,6 +134,7 @@ module.exports = async user => {
         const checkSeatNewLoginOptions = getCheckSeatNewLoginOptions(user)
         res = await rpn(checkSeatNewLoginOptions)
         const isPassedObj = await checkPassed(res) // boolean
+        user.isPassedObj3 = isPassedObj
         if (isPassedObj.isPassed) {
           // console.log(jar.getCookieString(extraOrigin))
           // queryFlight
