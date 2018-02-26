@@ -51,7 +51,7 @@ module.exports = async user => {
       'NAME': user.name,
       'CERTTYPE': certType,
       'CERTNO': user.card,
-      'MOBILE': '18124352828'
+      'MOBILE': '13528706248'
     }
 
     const res = await rpn(options)
