@@ -75,7 +75,7 @@ module.exports = async user => {
   } catch (error) {
     console.log('------- error:')
     console.log(error)
-    user.status = { message: '未知1' }
+    user.status = { message: error.message || '未知1' }
     return user
   }
 }
