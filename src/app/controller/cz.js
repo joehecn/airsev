@@ -2,7 +2,7 @@
 const getFlight = require('../api/cz.js')
 
 const checkBreakMessage = message => {
-  if (message && (message === '307 - undefined' || message.indexOf('EAI_AGAIN') > -1)) {
+  if (message && (message === '未知2' || message === '未知3' || message === '307 - undefined' || message.indexOf('EAI_AGAIN') > -1)) {
     return false
   }
   return true
