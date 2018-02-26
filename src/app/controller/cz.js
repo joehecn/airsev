@@ -15,7 +15,7 @@ exports.postFlight = async ctx => {
 
   let i = 0
   while (i < 3) {
-    // console.log('------' + i)
+    console.log('------' + i)
     res = await getFlight(user)
     if (checkBreakMessage(res.status.message)) {
       break
